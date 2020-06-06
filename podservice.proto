@@ -1,0 +1,27 @@
+
+syntax = "proto3";
+
+package podservice;
+
+import "google/protobuf/empty.proto";
+
+option go_package="github.com/ggolish/podservicego";
+
+message Podcast {
+    string rssUrl = 1;
+    string name = 2;
+}
+
+message Resp {
+    enum Status {
+        SUCCESS = 0;
+        FAILURE = 1;
+    }
+    Status status = 1;
+    string err = 2;
+}
+
+service PodcastService {
+    rpc AddPodcast(Podcast) returns (Resp) {}
+    rpc GetPodcasts(google.protobuf.Empty) returns (stream Podcast) {}
+}
