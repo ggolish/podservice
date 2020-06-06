@@ -1,0 +1,3 @@
+[submodule "podservicego"]
+	path = podservicego
+	url = git@github.com:ggolish/podservicego.git
