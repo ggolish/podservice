@@ -8,8 +8,18 @@ import "google/protobuf/empty.proto";
 option go_package="github.com/ggolish/podservicego";
 
 message Podcast {
-    string rssUrl = 1;
-    string name = 2;
+    int64  id = 1;
+    string rssUrl = 2;
+    string title = 3;
+    string desc = 4;
+}
+
+message Episode {
+    string title = 1;
+    string pubDate = 2;
+    string desc = 3;
+    string link = 4;
+    string duration = 5;
 }
 
 message Resp {
